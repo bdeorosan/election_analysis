@@ -100,9 +100,11 @@ with open(file_to_save, "w") as txt_file:
         county_vote_percentage = float(votes_in_county) / float(total_votes) * 100
 
          # 6d: Print the county results to the terminal.
-        print(f"{county_name}: {county_vote_percentage:.1f}% ({votes_in_county:,})")
+        county_results = (f"{county_name}: {county_vote_percentage:.1f}% ({votes_in_county:,})\n")
+        print(county_results)
 
          # 6e: Save the county votes to a text file.
+        txt_file.write(county_results)
 
          # 6f: Write an if statement to determine the winning county and get its vote count.
         if (votes_in_county > county_most_turn_count):
